@@ -1,6 +1,6 @@
 # dotfiles
-Distro: Arch
-WM: i3
-Shell: zsh
-FM: Thunar
+Distro: Arch <br/>
+WM: i3 <br/>
+Shell: zsh<br/>
+FM: Thunar<br/>
 Term: RXVT-Unicode
