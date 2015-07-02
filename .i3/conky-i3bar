@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Send the header indicating we want to use JSON
+echo '{"version":1}'
+
+# Begin an endless array
+echo '['
+
+# Send an empty array first for simplification
+echo '[],'
+
+# Forward the blocks of info forever
+exec conky -c $HOME/.i3/.conkyrc
+

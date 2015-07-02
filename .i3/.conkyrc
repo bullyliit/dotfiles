@@ -1,0 +1,24 @@
+background no
+out_to_console yes
+out_to_x no
+update_interval 1
+total_run_times 0
+short_units yes
+pad_percents 3
+cpu_avg_samples 2
+
+TEXT
+[
+{"full_text": "${if_existing /proc/net/route wlp19s0}w: ${addr wlp19s0}${endif}${if_up enp20s0f5"}e: ${addr enp20s0f5}${endif}", "color":"\#B5BD68"},
+{"full_text": "${if_existing /proc/net/route wlp19s0}${wireless_essid wlp19s0} ${wireless_link_qual_perc wlp19s0}%${endif}", "color":"\#B5BD68"},
+{"full_text": "cpu: ${cpu}% ${if_existing /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input} \
+(${execi 1200 echo $(($(cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input) / 1000))} C)\
+${else}\
+(${execi 1200 echo $(($(cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input) / 1000))} C)\
+${endif}", "color":"\#81A2BE"},
+{"full_text": "ram: $mem", "color":"\#CC6666"},
+{"full_text": "bat: ${battery_percent BAT0}%", "color":"\#8ABEB7"},
+{"full_text": "vol: ${exec .scripts/vol.sh }", "color":"\#DE935F"},
+{"full_text": "${time %a, %d.%m.%Y}", "color":"\#C5C8C6"},
+{"full_text": "${time %H:%M}", "color":"\#C5C8C6"}
+],
