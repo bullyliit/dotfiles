@@ -7,7 +7,7 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/myxanthrope/.zshrc'
 
-autoload -Uz compinit
+autoload -U compinit
 compinit
 # End of lines added by compinstall
 
@@ -17,8 +17,11 @@ compinit
 # Enable shell coloring
 autoload -U colors && colors
 
+# Enable syntax highlighting (instal zsh-syntax-highlighting via pacman first)
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Prompt colors
-PROMPT="%{$fg[green]%} >> "
+PROMPT="%{$fg[green]%} $ "
 RPROMPT="%{$fg[white]%}"
 
 # Display colorful results for 'ls' and 'grep'
